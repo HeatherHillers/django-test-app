@@ -139,10 +139,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # For collectstatic command
-
+PROJECT_ROOT = BASE_DIR / 'KitchenInventory'
 # Additional locations of static files
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    PROJECT_ROOT / 'static',
 ]
 
 # Default primary key field type
