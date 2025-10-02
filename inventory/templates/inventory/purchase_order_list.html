@@ -1,0 +1,24 @@
+{% extends 'inventory/base.html' %}
+
+{% block title %}Purchase Order List{% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Menu Item</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in purchase_orders %}
+        <tr>
+            <td>{{ order.order_date }}</td>
+            <td>{{ order.menu_item }}</td>
+            <td>{{ order.price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
