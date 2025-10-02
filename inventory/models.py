@@ -68,3 +68,14 @@ class PurchaseOrder(models.Model):
 
     def __str__(self):
         return f"Order for {self.quantity} of {self.menu_item.name} on {self.order_date}"
+    
+    def cost(self):
+        # total cost based on recipe ingredients and their cpu
+        total_cost = 0
+        for ri in self.menu_item.recipe.recipeingredient_set.all():
+            total_cost += ri.units * ri.ingredient.cpu
+        return total_cost * self.quantity
+    
+    def price(self):
+        # total price based on menu item price
+        return self.menu_item.price * self.quantity
