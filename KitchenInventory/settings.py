@@ -79,9 +79,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'kitchen_inventory',
-        'USER': 'root',
+        'USER': 'HHillers',
         'PASSWORD': '',
-        'HOST': 'localhost',
+        'HOST': 'HHillers.mysql.eu.pythonanywhere-services.com',
         'PORT': '3306',
     }
 }
