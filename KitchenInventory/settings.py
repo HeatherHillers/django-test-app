@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-t)4b_eh9*3^sq6#v9(%pa(91-7t#4%or_rs7flbf&0d)j1!5o#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hhillers.eu.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -78,11 +78,14 @@ WSGI_APPLICATION = 'KitchenInventory.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'kitchen_inventory',
+        'NAME': 'HHillers$kitchen_inventory',
         'USER': 'HHillers',
-        'PASSWORD': '',
+        'PASSWORD': 'I am a Rocket Man.',  # You need to set this to your actual MySQL password
         'HOST': 'HHillers.mysql.eu.pythonanywhere-services.com',
         'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 
